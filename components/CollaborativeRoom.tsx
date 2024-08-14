@@ -17,9 +17,9 @@ const CollaborativeRoom = ({
 }: CollaborativeRoomProps) => {
   const currentUserType = "editor";
 
+  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ const CollaborativeRoom = ({
   };
 
   useEffect(() => {
-    const handleClickOutside = (e: any) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
