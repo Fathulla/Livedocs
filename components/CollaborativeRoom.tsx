@@ -47,7 +47,7 @@ const CollaborativeRoom = ({
   };
 
   useEffect(() => {
-    const handleClickOutside = (e: React.MouseEvent) => {
+    const handleClickOutside = (e: any) => {
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
